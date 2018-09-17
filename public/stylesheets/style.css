@@ -1,0 +1,14 @@
+body {
+        padding: 10px;
+    }
+
+    .btn-add-panel {
+        margin-left: 44%;
+    }
+
+    #accordion {
+        width: 50%;
+        margin-top: 50px;
+    }
+
+
