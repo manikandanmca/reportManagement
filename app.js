@@ -11,7 +11,7 @@ var logger = require('morgan');
 
 var indexRouter = require('./server/controllers/index');
 var usersRouter = require('./server/controllers/users');
-var adminRouter = require('./server/controllers/admin/index');
+var adminUserRouter = require('./server/controllers/admin/users');
 
 var app = express();
 
@@ -44,7 +44,7 @@ app.use(function (req, res, next) {
 });
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/admin', adminRouter);
+app.use('/admin/users', adminUserRouter);
 
 
 

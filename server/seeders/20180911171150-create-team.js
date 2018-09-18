@@ -10,34 +10,52 @@ module.exports = {
       */
       return queryInterface.bulkInsert('Teams', [{
         name: 'Client - Apps',
-        status: true
+        status: true,
+        createdAt: new Date(),
+        updatedAt: new Date()
       }, {
         name: 'BN - Cloud',
-        status: true
+        status: true,
+        createdAt: new Date(),
+        updatedAt: new Date()
       }, {
         name: 'Analytics BI & CI',
-        status: false
+        status: true,
+        createdAt: new Date(),
+        updatedAt: new Date()
       }, {
         name: 'Analytics - Client Services',
-        status: true
+        status: true,
+        createdAt: new Date(),
+        updatedAt: new Date()
       },{
         name: 'QuickPub',
-        status: true
+        status: true,
+        createdAt: new Date(),
+        updatedAt: new Date()
       },
       {
         name: 'Devices',
-        status: true
+        status: true,
+        createdAt: new Date(),
+        updatedAt: new Date()
       },
       {
         name: 'QA - Team',
-        status: true
+        status: true,
+        createdAt: new Date(),
+        updatedAt: new Date()
       },
       {
         name: 'Payment Gateway',
-        status: false
+        status: false,
+        createdAt: new Date(),
+        updatedAt: new Date()
       },{
         name: 'Build & Release',
-        status: false
+        status: false,
+        createdAt: new Date(),
+        updatedAt: new Date()
       }
 
       ], {});

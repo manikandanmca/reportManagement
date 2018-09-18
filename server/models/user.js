@@ -10,6 +10,11 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   User.associate = function(models) {
     // associations can be defined here
+    User.hasOne(models.Profile, {
+      foreignKey: 'userId',
+      onDelete: 'CASCADE',
+      as: 'Profile'
+    })
   };
   User.beforeCreate(function(user, options) {
     return cryptPassword(user.password)

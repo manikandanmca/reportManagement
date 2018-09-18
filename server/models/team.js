@@ -6,9 +6,15 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Team.associate = function(models) {
     // associations can be defined here
-     Team.hasMany(models.TeamReport, {
-      foreginKey: 'teamId'	
-    });
+     Team
+        .hasMany(models.TeamReport, {
+          foreginKey: 'teamId'	
+        });
+    Team.hasMany(models.Profile, {
+          foreignKey: 'teamId',
+          onDelete: 'CASCADE',
+          as: 'Profiles'
+        });
   };
   return Team;
 };

@@ -1,0 +1,40 @@
+extends ../../test
+
+block content
+  .container
+    .table-wrapper
+      .table-title
+        .row
+          .col-sm-6
+            h2
+              | 
+              b  Users
+          .col-sm-6
+            a(href='/admin/users/new')
+              New User
+      table.table.table-striped.table-hover
+        thead
+          tr
+            th Name
+            th Email
+            th User Name
+            th Password
+            th Team
+            th Role
+        tbody
+          each user in users
+            tr
+              td  
+                = user.name
+              td
+                = user.email
+              td
+                = user.username
+              td
+                = user.password
+              td
+                = user.Profile == undefined ? 'Admin' : user.Profile.Team.name
+              td
+                = user.Profile == undefined ? 'Admin' : user.Profile.Role.name
+                
+    
