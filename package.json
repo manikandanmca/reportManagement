@@ -14,9 +14,13 @@
     "express-messages": "*",
     "express-session": "*",
     "express-validator": "*",
+<<<<<<< HEAD
     "flash": "^1.1.0",
     "http-errors": "^1.6.3",
     "method-override": "^3.0.0",
+=======
+    "http-errors": "^1.6.3",
+>>>>>>> b4fb5fba9ade64a3e3eadbcaeb994319aa78ad2c
     "morgan": "~1.9.0",
     "passport": "*",
     "passport-http": "*",

@@ -1,7 +1,11 @@
 {
   "development": {
     "username": "postgres",
+<<<<<<< HEAD
     "password": "12345",
+=======
+    "password": "priya",
+>>>>>>> b4fb5fba9ade64a3e3eadbcaeb994319aa78ad2c
     "database": "mottu_development",
     "host": "127.0.0.1",
     "dialect": "postgres"
