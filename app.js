@@ -8,6 +8,7 @@ var LocalStrategy = require('passport-local').Strategy;
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var methodOverride = require('method-override');
 
 var indexRouter = require('./server/controllers/index');
 var usersRouter = require('./server/controllers/users');
@@ -32,7 +33,21 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use(flash());
+app.use(require('flash')());
+app.use(express.static(path.join(__dirname, '..', '..', 'client')));
+app.use(methodOverride('_method'));
+
+app.use(methodOverride(function (req, res) {
+  console.log('START--------',req.body);
+  console.log('--------END');
+  if (req.body && typeof req.body === 'object' && '_method' in req.body) {
+    // look in urlencoded POST bodies and delete it
+    var method = req.body._method;
+    delete req.body._method;
+    return method;
+  }
+}));
+
 app.use(function (req, res, next) {
   
   res.locals.success_msg = req.flash('success_msg');

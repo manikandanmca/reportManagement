@@ -1,4 +1,4 @@
-extends ../../test
+extends ../../layout
 
 block content
   .container
@@ -8,10 +8,9 @@ block content
           .col-sm-6
             h2
               | 
-              b  Users
-          .col-sm-6
-            a(href='/admin/users/new')
-              New User
+              b  Users 
+          .col-sm-6.right
+            a(href='/admin/users/new') New Users          
       table.table.table-striped.table-hover
         thead
           tr
@@ -21,6 +20,8 @@ block content
             th Password
             th Team
             th Role
+            th Edit
+            th Delete
         tbody
           each user in users
             tr
@@ -36,5 +37,7 @@ block content
                 = user.Profile == undefined ? 'Admin' : user.Profile.Team.name
               td
                 = user.Profile == undefined ? 'Admin' : user.Profile.Role.name
-                
-    
+              td
+                a(href='/admin/users/edit/' + user.id) Edit
+              td
+                a(href='/admin/users/' + user.id + '?_method=DELETE') Delete  
