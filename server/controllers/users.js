@@ -20,6 +20,22 @@ router.get('/register', function(req, res, next) {
   });
 });
 
+
+router.post('/insert', function(req, res, next){
+   var activity= req.body.activity;
+   var remarks= req.body.remarks;
+   var concatData= activity +","+ remarks;
+   console.log('concatData'); 
+   res.render('users/filldetails', {activity: activity, remarks: remarks, activitydata: concatData  });
+});
+
+
+
+
+
+router.get('/filldetails', function(req, res, next) {
+  res.render('users/filldetails');
+});
 router.post('/register', function(req, res, next) {
   
 });

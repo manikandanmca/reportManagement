@@ -22,6 +22,9 @@ router.get('/', ensureAuthenticated, function(req, res, next) {
   res.render('admin/home', { title: 'Express' });
 });
 
+
+
+
 function ensureAuthenticated(req, res, next) {
   if(req.isAuthenticated()) {
   	return next();
