@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
     // associations can be defined here
      Team
         .hasMany(models.TeamReport, {
-          foreginKey: 'teamId'	
+          foreginKey: 'teamId'  
         });
     Team.hasMany(models.Profile, {
           foreignKey: 'teamId',

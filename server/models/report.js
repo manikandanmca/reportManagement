@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
   Report.associate = function(models) {
     // associations can be defined here
     Report.hasMany(models.TeamReport, {
-      foreginKey: 'reportId'	
+      foreginKey: 'reportId'  
     });
   };
   return Report;
